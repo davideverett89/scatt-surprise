@@ -6,6 +6,10 @@ import './App.scss';
 
 import Auth from '../components/pages/Auth/Auth';
 import MyNavbar from '../components/shared/MyNavBar/MyNavBar';
+import Home from '../components/pages/Home/Home';
+import EditScat from '../components/pages/EditScat/EditScat';
+import NewScat from '../components/pages/NewScat/NewScat';
+import SingleScat from '../components/pages/SingleScat/SingleScat';
 
 import fbConnection from '../helpers/data/connection';
 
@@ -36,6 +40,10 @@ class App extends React.Component {
         <MyNavbar />
         <h1>Scat Surprise</h1>
         <Auth />
+        <Home />
+        <EditScat />
+        <NewScat />
+        <SingleScat />
       </div>
     );
   }
