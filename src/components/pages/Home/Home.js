@@ -28,14 +28,14 @@ class Home extends React.Component {
   render() {
     const { scats } = this.state;
     const buildScatCards = scats.map((scat) => (
-      <ScatCard scat={scat} />
+      <ScatCard key={scat.id} scat={scat} />
     ));
     return (
         <div className="Home">
             <h1>Home</h1>
-      <div className="d-flex flex-wrap">
-        {buildScatCards}
-      </div>
+            <div className="d-flex flex-wrap">
+              {buildScatCards}
+            </div>
         </div>
     );
   }
