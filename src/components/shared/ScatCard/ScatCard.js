@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import scatShape from '../../../helpers/propz/scatShape';
@@ -8,10 +9,11 @@ import './ScatCard.scss';
 class ScatCard extends React.Component {
   static propTypes = {
     scat: scatShape.scatShape,
+    removeScat: PropTypes.func.isRequired,
   }
 
   render() {
-    const { scat } = this.props;
+    const { scat, removeScat } = this.props;
     const singleLink = `/scats/${scat.id}`;
     const editLink = `/edit/${scat.id}`;
     return (
@@ -21,6 +23,7 @@ class ScatCard extends React.Component {
                     <h5 className="card-title">{scat.location}</h5>
                     <Link className="m-2 btn btn-info" to={singleLink}><i className="fas fa-binoculars"></i></Link>
                     <Link className="m-2 btn btn-warning" to={editLink}><i className="fas fa-pencil-alt"></i></Link>
+                    <button className="m-2 btn btn-danger" onClick={() => removeScat(scat.id)}><i className="fas fa-trash"></i></button>
                     <p className="card-text">{scat.notes}</p>
                 </div>
             </div>
